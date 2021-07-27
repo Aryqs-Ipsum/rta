@@ -21,7 +21,7 @@ export default class Gestured {
   
     panmove(e) {
         this.offset = e.touches[0].clientY - this.scrollY
-        if(this.offset < 0) return
+        if(this.offset < 0 || !this.el.classList.contains('rta--opened')) return
         this.el.style.transform = `translate3D(0, ${this.offset}px, 0)`
     }
   
