@@ -72,6 +72,7 @@ export default class RelToAbs {
         event.stopPropagation()
         if(!this.opened) return
         this.opened = false
+        navigator.vibrate(20)
 
         this.el.classList.remove('rta--opened')
 
