@@ -1,9 +1,27 @@
 {
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "sass": "^1.36.0",
     "typescript": "^4.3.5"
   },
-  "dependencies": {
-    "src": "^1.1.2"
-  }
+  "name": "relative-to-absolute",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "parcel demo.html",
+    "build": "parcel build src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryqs-ipsum/rta.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Arno Cellarier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aryqs-ipsum/rta/issues"
+  },
+  "homepage": "https://github.com/aryqs-ipsum/rta#readme"
 }
