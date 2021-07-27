@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./demo.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 64px; height: 2000px;">
+
+    <!-- Google photo -->
+    <div id="photo">
+        <div class="photo">
+            <div class="photo__img">
+                <img src="https://picsum.photos/400/300" alt="">
+            </div>
+            <div class="photo__box">
+                <button class="photo__box-btn material-icons rta--close">close</button>
+                <div class="photo__box-drawer">
+                    <h1>Photo Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google keep -->
+    <div class="keep" id="keep">
+        <div class="keep__text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quaerat. Natus numquam eaque rem. Recusandae assumenda doloremque repellendus consectetur eaque illum non nesciunt aliquam molestias vero fuga alias, eveniet et!
+            <br>Autem quas eaque veniam aliquid? Commodi laborum nulla, voluptas iste blanditiis asperiores dicta voluptatum tenetur repudiandae esse atque in totam ratione consectetur eos ab ipsa sint perferendis fuga culpa mollitia.</p>
+        </div>
+        <div class="keep__options">
+            <button>button</button>
+        </div>
+    </div>
+
+    <style>
+        .photo__img {
+            height: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .photo__img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 16px;
+            transition: border-radius .1550ms ease;
+        }
+
+        .rta--open .photo__img {
+            background: #000;
+        }
+
+        .rta--open .photo__img img {
+            border-radius: 0px;
+        }
+
+        .photo__box-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            height: 48px;
+            width: 48px;
+            background-color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+    </style>
+    
+</body>
+</html>
