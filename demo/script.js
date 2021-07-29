@@ -1,4 +1,4 @@
-import RelToAbs from './src'
+import RelToAbs from '../src'
 
 const openablePhoto = document.getElementById('photo');
 new RelToAbs(openablePhoto, {clickOutsideToClose: false});
