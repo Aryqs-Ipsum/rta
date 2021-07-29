@@ -9,7 +9,7 @@ export default class RelToAbs {
     options: object
     defaultOptions: object = {
         swipeToClose: true,
-        scrollToClose: true,
+        scrollToClose: false,
         clickOutsideToClose: true,
         scrollElement: document.body,
         coloredPlaceholder: false
@@ -36,20 +36,26 @@ export default class RelToAbs {
             this.options.scrollElement.addEventListener('scroll', this.close.bind(this))
         }
 
-        this.el.classList.add('rta')
-        this.el.addEventListener('click', this.open.bind(this))
+        // click outside to close
+        if(this.options.clickOutsideToClose) {
+            const backdrop = this.el.querySelector('.rta__backdrop')
+            backdrop.addEventListener('click', this.close.bind(this))
+        }
+
+        // close buttons
         const closeButtons = this.el.querySelectorAll('.rta--close')
         closeButtons.forEach(button => {
             button.addEventListener('click', this.close.bind(this))
         })
+
+        // open on click
+        this.el.addEventListener('click', this.open.bind(this))
+
+        this.el.classList.add('rta')
     }
 
     public open(event) {
-        if(this.opened) {
-            if(this.options.clickOutsideToClose)
-                return this.close(event)
-            return
-        }
+        if(this.opened) return
         this.opened = true
 
         // get divs dimensions 
@@ -68,7 +74,7 @@ export default class RelToAbs {
         this.el.style.width = dimensions.width + 'px'
         this.el.style.height = dimensions.height + 'px'
 
-        if(this.options.swipeToClose) {
+        if(!this.options.scrollToClose || this.options.swipeToClose) {
             this.options.scrollElement.classList.add('rta--overflow-hidden')
         }
 

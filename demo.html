@@ -15,7 +15,7 @@
     <!-- Google photo -->
     <h1>Photo lightbox</h1>
     <div id="photo">
-        <div class="photo">
+        <div class="rta__box photo">
             <div class="photo__img">
                 <img src="https://picsum.photos/400/300" alt="">
             </div>
@@ -28,12 +28,13 @@
     <!-- Google keep -->
     <h1>Text modal</h1>
     <div id="keep">
-        <div class="keep">
-            <div class="keep__text">
+        <div class="rta__box keep">
+            <div class="rta__box-content keep__text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quaerat. Natus numquam eaque rem. Recusandae assumenda doloremque repellendus consectetur eaque illum non nesciunt aliquam molestias vero fuga alias, eveniet et!
                 <br>Autem quas eaque veniam aliquid? Commodi laborum nulla, voluptas iste blanditiis asperiores dicta voluptatum tenetur repudiandae esse atque in totam ratione consectetur eos ab ipsa sint perferendis fuga culpa mollitia.</p>
             </div>
         </div>
+        <div class="rta__backdrop"></div>
     </div>
 
     <footer>
@@ -104,7 +105,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0,0,0,0.24);
         }
         .rta--open .keep__text {
             width: 450px;
