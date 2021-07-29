@@ -94,6 +94,9 @@ footer .icon {
 .image {
     background-color: #fff;
 }
+.rta--open .image__src {
+    height: 250px;
+}
 .image__btn {
     position: fixed;
     top: 8px;
