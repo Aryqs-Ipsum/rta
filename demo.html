@@ -7,11 +7,13 @@
     <title>Document</title>
     <script src="./demo.js" defer></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
-<body style="margin: 0; padding: 64px; height: 2000px;">
+<body>
 
     <!-- Google photo -->
+    <h1>Photo lightbox</h1>
     <div id="photo">
         <div class="photo">
             <div class="photo__img">
@@ -24,23 +26,46 @@
     </div>
 
     <!-- Google keep -->
-    <div class="keep" id="keep">
-        <div class="keep__text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quaerat. Natus numquam eaque rem. Recusandae assumenda doloremque repellendus consectetur eaque illum non nesciunt aliquam molestias vero fuga alias, eveniet et!
-            <br>Autem quas eaque veniam aliquid? Commodi laborum nulla, voluptas iste blanditiis asperiores dicta voluptatum tenetur repudiandae esse atque in totam ratione consectetur eos ab ipsa sint perferendis fuga culpa mollitia.</p>
-        </div>
-        <div class="keep__options">
-            <button>button</button>
+    <h1>Text modal</h1>
+    <div id="keep">
+        <div class="keep">
+            <div class="keep__text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, quaerat. Natus numquam eaque rem. Recusandae assumenda doloremque repellendus consectetur eaque illum non nesciunt aliquam molestias vero fuga alias, eveniet et!
+                <br>Autem quas eaque veniam aliquid? Commodi laborum nulla, voluptas iste blanditiis asperiores dicta voluptatum tenetur repudiandae esse atque in totam ratione consectetur eos ab ipsa sint perferendis fuga culpa mollitia.</p>
+            </div>
         </div>
     </div>
 
+    <footer>
+        <img src="icon.png" alt="">
+    </footer>
+
     <style>
+        /* ui */
+        html {
+            display: flex;
+            justify-content: center;
+        }
+        body {
+            margin: 0;
+            max-width: 480px;
+            height: 2000px;
+            font-family: 'Inter', 'Helvetica', sans-serif;
+            font-weight: 400;
+        }
+        h1 {
+            padding-bottom: 16px;
+            margin-top: 48px;
+            border-bottom: 1px solid #ddd;
+            font-weight: 600;
+        }
+
+        /* photobox */
         .photo__img {
             height: 100%;
             display: grid;
             place-items: center;
         }
-
         .photo__img img {
             width: 100%;
             height: auto;
@@ -48,15 +73,6 @@
             border-radius: 16px;
             transition: border-radius .1550ms ease;
         }
-
-        .rta--open .photo__img {
-            background: #000;
-        }
-
-        .rta--open .photo__img img {
-            border-radius: 0px;
-        }
-
         .photo__box-btn {
             position: absolute;
             top: 16px;
@@ -69,6 +85,31 @@
             border-radius: 50%;
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
+        /* photobox opened */
+        .rta--open .photo__img {
+            background: #000;
+        }
+        .rta--open .photo__img img {
+            border-radius: 0px;
+        }
+
+        /* text modal */
+        .keep__text {
+            padding: 16px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        /* text modal opened */
+        .rta--open .keep {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0,0,0,0.24);
+        }
+        .rta--open .keep__text {
+            width: 450px;
+        }
+
     </style>
     
 </body>

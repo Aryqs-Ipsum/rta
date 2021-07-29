@@ -3,19 +3,21 @@ import './style.scss'
 
 export default class RelToAbs {
     el: HTMLElement
-    options: object
     sections: Array<HTMLDivElement> = []
     opened: boolean = false
     placeholder: HTMLElement = null
-
-    constructor(el, options = {
+    options: object
+    defaultOptions: object = {
         swipeToClose: true,
         scrollToClose: true,
+        clickOutsideToClose: true,
         scrollElement: document.body,
         coloredPlaceholder: false
-    }) {
+    }
+
+    constructor(el, options = {}) {
         this.el = el
-        this.options = options
+        this.options = Object.assign(this.defaultOptions, options)
 
         // filter nodes and get only divs
         this.el.childNodes.forEach(node => {
@@ -36,11 +38,18 @@ export default class RelToAbs {
 
         this.el.classList.add('rta')
         this.el.addEventListener('click', this.open.bind(this))
-        this.el.querySelector('.rta--close').addEventListener('click', this.close.bind(this))
+        const closeButtons = this.el.querySelectorAll('.rta--close')
+        closeButtons.forEach(button => {
+            button.addEventListener('click', this.close.bind(this))
+        })
     }
 
-    public open() {
-        if(this.opened) return
+    public open(event) {
+        if(this.opened) {
+            if(this.options.clickOutsideToClose)
+                return this.close(event)
+            return
+        }
         this.opened = true
 
         // get divs dimensions 
