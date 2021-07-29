@@ -40,25 +40,41 @@
 
     <!-- google images grid -->
     <h1>Images grid</h1>
-    <div id="images">
-        <div class="rta__box images">
-            <div class="rta__box-content images__grid">
-                <div class="images__grid-item">
-                    <img src="https://picsum.photos/400/301" alt="">
-                </div>
-                <div class="images__grid-item">
-                    <img src="https://picsum.photos/401/301" alt="">
-                </div>
-                <div class="images__grid-item">
-                    <img src="https://picsum.photos/402/302" alt="">
-                </div>
-                <div class="images__grid-item">
-                    <img src="https://picsum.photos/403/303" alt="">
+    <div class="rta__box-content images__grid">
+        <div class="images__grid-item" id="images-grid">
+            <div class="relative-to-absolute">
+                <div class="rta__box image">
+                    <div class="">
+                        <img src="https://picsum.photos/400/300" alt="">
+                    </div>
+                    <div class="rta__box-content">
+                        <button class="image__btn material-icons rta--close">close</button>
+                        <div class="image__related">
+                            <h2>Image title</h2>
+                            <p>A small description of the image</p>
+                            <div class="image__related-big-btn">
+                                <i class="material-icons">arrow_forwards</i>Show all images for sunset
+                            </div>
+                            <h3>Related images :</h3>
+                            <div>
+                                <img src="https://picsum.photos/100/150" alt="">
+                                <img src="https://picsum.photos/200/150" alt="">
+                                <img src="https://picsum.photos/300/150" alt="">
+                                <img src="https://picsum.photos/400/250" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                
-            </div>
+        </div>
+        <div class="images__grid-item">
+            <img src="https://picsum.photos/401/301" alt="">
+        </div>
+        <div class="images__grid-item">
+            <img src="https://picsum.photos/402/302" alt="">
+        </div>
+        <div class="images__grid-item">
+            <img src="https://picsum.photos/403/303" alt="">
         </div>
     </div>
 

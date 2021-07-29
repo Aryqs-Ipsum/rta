@@ -38,6 +38,7 @@
 
         .rta__box {
             height: 100%;
+            overflow: auto;
 
             div:nth-child(2) {
                 display: block;

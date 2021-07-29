@@ -10,7 +10,7 @@ export default class RelToAbs {
     defaultOptions: object = {
         swipeToClose: true,
         scrollToClose: false,
-        clickOutsideToClose: true,
+        clickOutsideToClose: false,
         scrollElement: document.body,
         coloredPlaceholder: false
     }
