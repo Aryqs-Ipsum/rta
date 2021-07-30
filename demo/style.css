@@ -94,7 +94,10 @@ footer .icon {
 .image {
     background-color: #fff;
 }
-.rta--open .image__src {
+.image__src {
+    height: 100%;
+}
+.rta--opened .image__src {
     height: 250px;
 }
 .image__btn {

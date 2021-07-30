@@ -5,6 +5,7 @@ export default class Gestured {
     scrollingTimeout: any;
     isScrolling: boolean = false;
     scrollBox: HTMLElement;
+    boxContent: HTMLElement;
     closeCallback
 
     constructor(el, closeCallback) {
@@ -21,6 +22,8 @@ export default class Gestured {
                 }, 66)
             })
         }
+
+        this.boxContent = this.el.querySelector('.rta__box-content')
 
         // events
         this.el.addEventListener('touchstart', this.panstart.bind(this))
@@ -40,11 +43,15 @@ export default class Gestured {
             if(this.scrollBox.scrollTop !== 0) return this.offset = 0
         }
         this.el.style.transform = `translate3D(0, ${this.offset}px, 0)`
+        if(this.boxContent)
+            this.boxContent.style.opacity = 1 - this.offset / window.innerHeight
     }
   
     panend(e) {
         this.el.style.transform = 'translate3D(0, 0, 0)'
         this.el.style.transition = null
+        if(this.boxContent)
+            this.boxContent.style.opacity = null
         if(this.offset > 150) {
             this.offset = null
             this.closeCallback(e)
