@@ -1,4 +1,4 @@
-import RelToAbs from '../src'
+import RelToAbs from '../index'
 
 const openablePhoto = document.getElementById('photo');
 new RelToAbs(openablePhoto);
